@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>가위 바위 보 게임</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let x = prompt("가위 바위 보");
+		let xCho;
+		
+		switch(x) {
+		 case C :
+			 xCho = 1;
+			break;
+			 
+		 case R :
+			 xCho = 2;
+			break;
+			
+		 case P : 
+			 xCho = 3;
+			break;
+		 default :
+			 alert("잘못된 선택입니다.");
+		 location.reload;
+		};
+		
+		let y = prompt("가위 바위 보");
+		let yCho;
+		
+		switch(y) {
+		 case C :
+			 yCho = 1;
+			break;
+			 
+		 case R :
+			 yCho = 2;
+			break;
+			
+		 case P : 
+			 yCho = 3;
+			break;
+		 default :
+			 alert("잘못된 선택입니다.");
+		 location.reload;
+		};
+		
+		document.write("<h1> 가위 바위 보 게임</h1>");
+		document.write("첫번째 사람 : " + x);
+		document.write("<br>");
+		document.write("두번째 사람 : " + y);
+		document.write("<br>");
+		
+		if(xCho == 1) {
+			if(yCho ==1) {
+				document.write("비김");
+			}else if(yCho ==2) {
+				alert("두번째 사람 승");
+				document.write("두번째 사람 승 : " + y);
+			}else if (yCho ==3) {
+				alert("첫번째 사람 승");
+				document.write("첫번째 사람 승" + x);
+			}
+		}else if(xCho == 2) {
+			if(yCho == 1) {
+				alert("첫번째 사람 승");
+				document.write("첫번째 사람 승" + x);
+			}else if(yCho == 2) {
+				alert("비김");
+				document.write("비김");
+			}else if(yCho == 3) {
+				alert("두번째 사람 승");
+				documnet.write("두번째 사람 승" + y);
+			}
+		}else if(xCho == 3) {
+			if(yCho == 1) {
+				alert("첫번째 사람 승" + x);
+				documnet.write("첫번째 사람 승" + x);
+			}else if(yCho == 2) {
+				alert("두번째 사람 승");
+				document.write("두번째 사람 승" + y);
+			}else if(yCho == 3) {
+				alert("비김");
+				documnet.write("비김");
+			}
+ 		}
+	</script>
+</body>
+</html>

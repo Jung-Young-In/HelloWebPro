@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+// 			$("span").click(function(e) {
+// 				$("h1").css("background-color", "white");
+// 			});
+
+		$("h1", "#ex2").click(function() {
+			$(this).css("background-color", "yellow");
+		});
+		$("span", "#ex2").click(function(e) {
+			$(this).css("background-color", "red");
+			e.stopPropagation();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="ex2">
+		<h1 style="background-color: green;">
+			큰 제목 안에 <span style="background-color: red;">작은 영역	</span>이 있다. 
+		</h1>
+	</div>
+</body>
+</html>

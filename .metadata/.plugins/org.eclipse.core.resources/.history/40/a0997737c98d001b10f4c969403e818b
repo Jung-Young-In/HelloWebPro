@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>JQUERY HOMEWORK</title>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+	<h1>버튼 클릭시 이미지 추가</h1>
+	<button type="button" onclick="addImg()">이미지 추가</button><br>
+	<img alt="심슨" src="images/simson1.jpg" height="200" width="200" style="margin-top: 30px;" onclick="">
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	alert("이미지추가 버튼을 누르시면 추가 생성됩니다.")
+});
+function addImg() {
+	var image = $("<img>", {
+					"alt" : "심슨",
+					"src" : "images/simson1.jpg",
+					"height" : "200",
+					"width" : "200",
+					"click" : function() {
+						image.css("border", "2px solid red");
+					}
+	});
+	image.appendTo("body");
+ 	image.css("margin", "5px");
+}
+</script>
+</html>

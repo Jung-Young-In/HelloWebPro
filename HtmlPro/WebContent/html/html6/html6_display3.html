@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		#box1 {
+			background-color: blue;
+			width: 300px;
+			height: 300px;
+		}
+		#box2 {
+			background-color: yellow;
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+			z-index: -1;
+		}
+		#box3 {
+			background-color: green;
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			z-index: -2;
+		}
+		p {
+			color: red;
+			font-size: x-large;
+		}
+	</style>
+</head>
+<body>
+	<p id="box1">박스1</p>
+	<p id="box2">박스2</p>
+	<p id="box3">박스3</p>
+</body>
+</html>

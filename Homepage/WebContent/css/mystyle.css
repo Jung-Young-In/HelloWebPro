@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+header{
+	padding: 5px;
+	background-color: #0277bd;
+	text-align: center;
+	line-height: 60px;
+	min-width: 1550px;
+}
+
+#mid {
+	min-width: 1550px;
+}
+header a {
+	text-decoration: none; color: white;
+}
+
+body {
+	background-color: #f3f1e9;
+	padding: 10px;
+}
+
+nav {
+	margin-top: 10px; margin-bottom: 20px;
+	min-width: 1550px;
+}
+
+nav ul {
+	list-style: none;
+	border-top: 1px solid red;
+	border-bottom: 1px solid red;
+	text-align: center;
+	background-color: #0288d1;
+}
+
+nav ul li {
+	display: inline;
+	letter-spacing: .4em;
+	margin-left: 4em;
+}
+
+nav ul li a {
+	color: white;
+	line-height: 3em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	text-decoration: underline;
+}
+
+aside#left {
+	float: left;
+	width: 19%;
+	margin-right: 1em;
+	height: 700px;
+	min-width: 220px;
+}
+
+aside#left ul a {
+	text-decoration: none;
+	color: white;
+}
+
+aside#left ul {
+	list-style: none;
+}
+
+aside#left h2 {
+	margin-bottom: 50px;
+	margin-top: 40px;
+}
+
+aside#left ul li {
+	background-color: #0288d1;
+	padding: 5px 10px;
+	border-bottom: 1px hidden;
+	line-height: 50px;
+	opacity: 0.8;
+}
+
+aside#left ul li:hover {
+	background-color: red;
+}
+
+aside#main {
+	float: left;
+	height: 700px;
+	width: 59%;
+	min-width: 900px;
+}
+
+section#main {
+	float: left;
+}
+
+aside#right { 
+	float: right;
+	padding: 10px;
+	width: 19%;
+	height: 650px;
+	background-color: lightblue;
+	min-width: 200px;
+}
+
+aside#right#login input {
+	margin-bottom: 5px;
+}
+
+div#shopcart {
+	height: 250px;
+}
+
+footer { 
+	clear: both;
+	background-color: #0288d1;
+	color: white;
+	text-align: center;
+	padding: 1em 0px;
+	margin-bottom: 0px;
+	min-width: 1550px;
+}

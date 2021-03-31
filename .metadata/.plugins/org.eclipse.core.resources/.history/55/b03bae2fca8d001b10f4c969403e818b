@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	//onload 이벤트 - 화면이 준비가 되면 호출되는 함수
+	function init() {	//init(초기화) 함수는 초기화면에서 사용자가 사용하기 편리하도록 설정해주는 역할
+		//화면의 기본값을 세팅 || DB정보를 조회해서 화면에 설정
+	}
+	</script>
+	
+</head>
+<body onload="init()">
+
+</body>
+</html>

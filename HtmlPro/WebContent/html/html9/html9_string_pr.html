@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	/* 주민등록번호를 입력 받아 생년월일과 성별을 출력한다 */
+/* 	
+ 
+ 	var id = prompt("주민등록번호를 입력해 주세요", "123456-1234567");
+	var year = id.substr(0,2);
+	var month = id.substr(2,2);
+	var day = id.substr(4,2);
+	var gender = id.substr(7,1);
+	
+	document.write("연도 : " + year + "년" + "<br>");
+	document.write("월 : " + month + "월" + "<br>");
+	document.write("일 : " + day + "일 " + "<br>");
+
+	if(id.length != 14) {
+		alert("잘못된 주민등록번호 입력입니다")
+	} else {
+		if(gender==1 || gender==3) {
+		document.write("성별 : " + "남성" + "<br>");
+		}else{
+		document.write("성별 : " + "여성" + "<br>");
+		}
+	} 
+*/
+	
+	function proc() {
+		var ID = document.getElementById("id").value;
+		
+		var year = id.substr(0,2);
+		var month = id.substr(2,2);
+		var day = id.substr(4,2);
+		var gender = id.substr(7,1);
+		
+		document.write("연도 : " + year + "년" + "<br>");
+		document.write("월 : " + month + "월" + "<br>");
+		document.write("일 : " + day + "일 " + "<br>");
+
+		if(id.length != 14) {
+			alert("잘못된 주민등록번호 입력입니다")
+		} else {
+			if(gender==1 || gender==3) {
+				gender = "남성";
+			}else if(gender==2 || gender==4){
+				gender = "여성";
+			}else {
+				gender="입력값 오류";
+			}
+			
+			if(gender==1 || gender==2){
+				year = "19" + year;
+			}else if(gender==3 || gender==4){
+				year = "20" + year;
+			}else {
+				year="입력값 오류";
+			}
+			document.getElementById("spYear").innerHTML=year;
+			document.getElementById("spMonth").innerHTML=month;
+			document.getElementById("spDay").innerHTML=day;
+			document.getElementById("spGender").innerHTML=gender;
+		}
+	}
+	</script>
+</head>
+<body>
+	주민등록번호 : <input type="text" id="id">
+	<button type="button" onclick="proc()">확인</button>
+	<hr>
+	연도 : <span id="spYear"></span><br>
+	월 : <span id="spMonth"></span><br>
+	일 : <span id="spDay"></span><br>
+	성별 : <span id="spGender"></span><br>
+	
+	<hr>
+	
+	<h3>주민등록 유효성 검사</h3>
+	주민등록번호 : <input type="text" id="id2">
+	<button type="button" onclick="proc2()">확인</button>
+</body>
+	<script type="text/javascript">
+		function proc2() {
+			var v = document.getElementById("id2").value;
+			
+			v = v.replace("-","");
+			
+			var arr = [2,3,4,5,6,7,8,9,2,3,4,5];
+			
+			var sum = 0;
+			for(var i = 0; i < 12; i++){
+				sum += (parseInt(v.substr(i,1)) * arr[i]);
+				}
+			var tmp1 = sum % 11;
+			
+			var tmp2 = 11 - tmp1;
+			
+			var tmp3;
+			if(tmp2 == 10) {
+				tmp3 = 0;
+			}else if(tmp2 == 11) {
+				tmp3 = 1;
+			}else{
+				tmp3 = tmp2;
+			}
+			
+			if (tmp3 == v.substr(12)) {
+				alert("올바른 주민등록번호입니다");
+			}else{
+				alert("올바르지 않은 주민등록번호입니다");
+			}
+			
+			console.log("총합 : " + sum);
+			
+			return;
+			}
+			
+
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

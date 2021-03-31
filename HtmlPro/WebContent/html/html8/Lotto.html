@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Lotto</title>
+	<style type="text/css">
+		hr {
+			border: 2px solid red;
+		}
+		#ar {
+			border: 1px solid black;
+			background-color: lightgreen;
+			width: 300px;
+			height: 300px;
+			overflow: auto;
+		}
+		#sta {
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		function random() {
+			var arr = Array();
+			var num = 0;
+			var ranNum = Math.floor(Math.random() * 10);
+			con = document.getElementById("ar");
+		for(var i = 0; i < 5; i++) {
+			num = Math.floor(Math.random() * 10);
+			arr[i] = num;
+		}
+		for(var i = 0; i < arr.length-1; i++) {
+			ranNum += "," + arr[i];
+		}
+			document.getElementById("ar").innerText='';
+				con.value = ranNum+'\n'+con.value;
+		}
+	</script>
+</head>
+<body>
+	<h1 id="sta">Lotto</h1>
+	<button type="button" onclick="random()">시작</button>
+	<br><br>
+	<hr>
+	<h1>출력 위치</h1>
+	<textarea id="ar"></textarea>
+</body>
+</html>

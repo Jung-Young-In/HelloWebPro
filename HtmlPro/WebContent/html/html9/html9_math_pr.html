@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h3>가위 바위 보</h3>
+	<p>가위, 바위, 보 중 하나를 입력하세요</p>
+	<input type="text" id="rcp">
+	<button type="button" onclick="rcp()">대결</button>
+
+	<hr>
+		
+	<h3>로또번호 생성</h3>
+	<button type="button" onclick="getLotto()">번호생성</button>
+	<p id="lottoResult">결과 : </p>
+	
+	<script type="text/javascript">
+	function getLotto() {
+		//1~45까지 중복없이 6개 숫자 생성
+		var arr = [];
+		
+		while(arr.length < 6) {
+			var no = Math.floor(Math.random() * 45 + 1);
+			
+			//배열에 담기전에 중복값이 있는지 체크
+			if(arr.indexOf(no) == -1)	//값이 없으면 -1이 출력됨
+				arr.push(no);	//if문 뒤에 한줄이면 {} 없어도 됨
+			
+		}
+		
+		arr.sort(function(a, b){
+			console.log("a : " + a);
+			console.log("b : " + b);
+			console.log("a-b : " + (a-b));
+			return a-b;
+		});
+		
+		document.getElementById("lottoResult").innerHTML = arr;
+	}
+	</script>
+	
+	
+	<script type="text/javascript">
+	function rcp() {
+		var arrRcp = ["가위", "바위", "보"];	//인덱스 0,1,2를 가지고 있음
+		var comIdx = Math.floor(Math.random()*3);	//컴퓨터의 인덱스
+// 		parseInt(Math.random()*3);
+		var comRcp = arrRcp[comIdx];
+		
+		var userRcp = document.getElementById("rcp").value;	//가위, 바위, 보
+		
+		var userIdx = arrRcp.indexOf(userRcp);
+		
+		//가위, 바위, 보 비교
+		if(comIdx == userIdx) { 
+			alert("비김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+		} else if (comIdx < userIdx){	//사용자가 이긴 경우
+			//(컴퓨터가 낸 인덱스, 사용자가 낸 인덱스)로 표현 : (0,1), (1,2), (2,0)
+			if(comIdx == 0 && userIdx == 2) {	//컴퓨터가 이김
+				alert("짐\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			} else {	//사용자가 이긴 경우
+				alert("이김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			}
+		} else if (comIdx > userIdx) {	//(2,1), (2,0), (1,0)
+			if(comIdx == 2 && userIdx == 0) {	//사용자가 이김
+				alert("이김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			} else {	//컴퓨터가 이긴 경우
+				alert("짐\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			}
+		}
+	}
+	</script>
+</body>
+</html>

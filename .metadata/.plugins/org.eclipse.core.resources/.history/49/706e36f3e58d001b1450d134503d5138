@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+	});
+	</script>
+</head>
+<body>
+	<a href="http://www.ddit.or.kr">(재)대덕 인재 개발원</a><br><br>
+	<a href="mailto:power2c@ddit.or.kr">빠워에게 메일보내</a>
+	<div>Some images : 
+	</div>
+</body>
+</html>

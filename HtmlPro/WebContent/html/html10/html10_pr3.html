@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			/* border: 1px solid; */
+		}
+		div.top h2 {
+			text-align: center;
+		}
+		div.left {
+			height: 200px;
+			float: left;
+			width: calc(50% - 25px);
+			text-align: right;
+			margin-bottom: 70px;
+		}
+		div.center {
+			height: 200px;
+			width: 50px;
+			float: left;
+			text-align: center;
+			display: flex;
+			align-items: center;
+		}
+		div.center button {
+			margin-top: 26px;
+		}
+		div.right {
+			height: 200px;
+			float: right;
+			width: calc(50% - 25px);
+			text-align: left;
+		}
+		select {
+			height: 250px;
+			width: 200px;
+		}
+		button {
+			width: 30px;
+		}
+		div.bottom {
+			text-align: center;
+			margin-top: 100px;
+			clear: both;
+		}
+		div.bottom button {
+			width: 100px;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		function moveRight(param) {
+		 	console.log(param);
+		 	
+		 	var leftSel = document.getElementById("left");
+		 	var rightSel = document.getElementById("right");
+		 	
+// 		 	leftSel.length ==> select의 option 개수
+// 		 	leftSel[i] ==> select의 i번째 option
+			for (var i = 0; i < leftSel.length; i++) {
+				//선택된 것 옮길때
+				if(param == undefined){
+				
+					//leftSel[i].selected ==> 선택이 된 상태면 true, 아니면 false
+					//i번째 옵션이 선택되었는지 여부
+					if(leftSel[i].selected) {
+						rightSel.append(leftSel[i]);
+						i--;
+					}
+				} else{
+					//전체 옮길때
+					rightSel.append(leftSel[i]);
+					i--
+				}
+			}
+		 	return;
+		}
+		
+		function moveLeft(param) {
+			
+			var leftSel = document.getElementById("left");
+		 	var rightSel = document.getElementById("right");
+			
+			for (var i = 0; i < rightSel.length; i++) {
+				
+				if(param == undefined){
+					
+					if(rightSel[i].selected){
+						leftSel.append(rightSel[i]);
+						i--;
+					}
+				}else{
+					leftSel.append(rightSel[i]);
+					i--;
+				}
+			}
+			return;
+		}
+		
+		function addText() {
+			var str = document.getElementById("addText").value;
+
+			//step1. 중복된 값이 있는지 확인하기
+			var sel = document.getElementById("left");
+			
+			for (var i = 0; i < sel.length; i++) {
+				console.log(sel[i].innerHTML);
+// 				sel[i].innerHTML;	//<option>
+				if(sel[i].innerHTML == str) {
+					alert("\"" + str + "\"" + "은(는) 이미 등록된 값입니다.");
+					//홍길동은 이미 등록된 값입니다.
+					return;
+				}
+			}
+			
+			//step2. 중복된 값이 없으면 추가하기
+			
+			
+			var ele = document.createElement("option");
+			ele.innerHTML = str;
+			
+			//왼쪽 select박스에 옵션 추가하기
+			document.getElementById("left").appendChild(ele);
+			
+			//입력란을 빈값으로 초기화 시키기
+			document.getElementById("addText").value = "";
+			//입력란으로 포커스 주기
+			document.getElementById("addText").focus();
+		}
+	</script>
+</head>
+<body>
+	<div class="top">
+		<h2>SELECT 객체 예제</h2>
+	</div>
+	<div class="left">
+		<select id="left" multiple="multiple" size="15">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</div>
+	<div class="center">
+		<div></div>
+		<div>
+			<button type="button" onclick="moveRight()"><b>&gt;</b></button>
+			<button type="button" onclick="moveRight('all')"><b>&gt;&gt;</b></button>
+			<button type="button" onclick="moveLeft()"><b>&lt;</b></button>
+			<button type="button" onclick="moveLeft('all')"><b>&lt;&lt;</b></button>
+		</div>
+		<div></div>
+	</div>
+	<div class="right">
+		<select id="right" multiple="multiple" size="15">
+		</select>
+	</div>
+	<div class="bottom">
+		<input type="text" id="addText">
+		<button type="button" onclick="addText()">추가</button>
+	</div>
+</body>
+</html>

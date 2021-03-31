@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Lotto</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var lotto = [6];
+	var count = 0;
+	var ex = true;
+	
+	while(count < 6){
+		var number = parseInt(Math.random()*45)+1;
+		
+		for(var i = 0; i < count; i++){
+			if(lotto[i]==number)
+				ex=false;
+		}
+		
+		if(ex){
+			lotto[count]=number;
+			count++;
+		}
+		ex=true;
+	}
+	
+	document.write("<h3>행운의 로또 번호</h3>");
+	document.write("<hr><br>")
+	document.write(lotto[0]+" , "+lotto[1]+" , "+lotto[2]+" , "+lotto[3]+" , "+lotto[4]+" , "+lotto[5]);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

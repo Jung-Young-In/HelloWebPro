@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 요소 접근하기</title>
+</head>
+<body>
+	<h1 style="color: red;" id="test">getElementById 사용하기</h1>
+	<button type="button" onclick="func();">클릭</button>
+
+	<script type="text/javascript">
+		//함수 표현
+		function func() {
+			var obj = document.getElementById('test');
+			//obj에 <h1>을 할당
+		
+			obj.style.color = "blue";
+			obj.style.border = "1px dotted green";
+		}
+	</script>
+</body>
+</html>

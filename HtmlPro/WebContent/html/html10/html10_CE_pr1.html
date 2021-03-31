@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function createImg(obj, fileName) {
+			var arrImgs = document.getElementsByTagName("img");
+			//arrImgs : [<img>, <img>, ...,<img>]와 같은 형식으로 나옴
+			
+			for (var i = 0; i < arrImgs.length; i++) {
+				arrImgs[i].remove();	//<li>
+			}
+			
+			var objImg = document.createElement("img");
+			
+// 			objImg.src = "../../images/spongebob.jpg";
+			objImg.src = "../../images/" + fileName;
+			objImg.height = "40";
+			
+			obj.appendChild(objImg);
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li id="tmp1" onclick="createImg(this, 'spongebob.jpg')">컴퓨터1</li>
+		<li id="tmp2" onclick="createImg(this, 'spongebob11.jpg')">식품2</li>
+		<li id="tmp3" onclick="createImg(this, 'lion11.jpg')">호랑이</li>
+		<li id="tmp4" onclick="createImg(this, 'coffee.jpg')">cloud03</li>
+		<li id="tmp5" onclick="createImg(this, '도넛.jpg')">coffee1</li>
+	</ul>
+</body>
+</html>

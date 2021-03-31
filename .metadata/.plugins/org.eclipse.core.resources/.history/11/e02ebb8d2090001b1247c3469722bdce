@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>ATTR 선택자</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("a").css("font-size", "x-large");
+		$("div").css("font-size", "x-large");
+		$("img").css("height", "100").css("width", "100");
+		$("#simsonPng").css("height", "200").css("width", "200");
+		$("body").css("padding-left", "30px");
+		$("[type='button']").css("width", "70px").css("height", "30px").css("background-color", "yellow");
+		$("[type='submit']").css("width", "70px").css("height", "30px").css("background-color", "#FFE4E1");
+		$("a[href^='mailto']").css("background-color", "yellow");
+		$("a[href*='power2c']").css("text-decoration", "none");
+		$("img").not("#img1").css("border", "2px solid blue");
+		$("img[src$='png']").css("border", "2px solid green");
+		$("[alt]").css("border", "5px solid pink");
+		$("img[title*='named']").css("border", "10px double red");
+		$("img[id^='little']").css("border", "3px dotted black");
+		$("input[type=text]").css("border", "2px dotted green");
+	});
+	
+	</script>
+</head>
+<body>
+	<a href="http://www.ddit.or.kr">(재)대덕 인재 개발원</a><br><br>
+	<a href="mailto:power2c@ddit.or.kr">빠워에게 메일보내</a><br><br><br>
+	<div>
+		Some images : 
+	</div>
+	<div>
+		<img alt="바트" src="images/simson.jpg" id="img1">
+		<img src="images/simson.jpg" id="little">
+		<img alt="바트" src="images/simson.jpg" id="little-bear">
+		<img src="images/simson.jpg" title="nameImg">
+		<img alt="바트" src="images/simson.jpg" title="namedImg">
+		<img src="images/simson.jpg">
+		<img id="simsonPng" src="images/simson2.png">
+		<br><br>
+	</div>
+	<div id="someDiv">
+		이곳은 ID속성이 someDiv인 &#60;div&#62; 태그입니다.
+	</div>
+	<br>
+	Text : <input type="text"><br><br>
+	<button type="submit">Submit</button>
+	<input type="button" value="클릭">
+</body>
+</html>

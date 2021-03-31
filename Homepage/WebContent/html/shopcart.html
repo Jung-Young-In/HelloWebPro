@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body {
+			background-color: #f5f5dc;
+		}
+		caption a {
+			color: green;
+		}
+		table, td, th {
+		border-collapse: collapse;
+		text-align: center;
+		border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<table style="width: 700px; height: 250px;">
+		<caption><a href="main.html" target="_self"><b><h3>CART LIST</h3></b></a></caption>
+		<tr> 
+			<th>품목</th>
+			<th>가격</th>
+			<th>수량</th>
+			<th>합계</th>
+		</tr>
+		<tr> 
+			<td>컴퓨터</td>
+			<td>1,800,000원</td>
+			<td><input type="number" name="qty"></td>
+			<td><input type="text" name="amount"></td>
+		</tr>
+		<tr> 
+			<td>후드티</td>
+			<td>80,000원</td>
+			<td><input type="number" name="qty"></td>
+			<td><input type="text" name="amount"></td>
+		</tr>
+		<tr> 
+			<td>음원</td>
+			<td>700원</td>
+			<td><input type="number" name="qty"></td>
+			<td><input type="text" name="amount"></td>
+		</tr>
+		<tr> 
+			<td>영화파일</td>
+			<td>2,000원</td>
+			<td><input type="number" name="qty"></td>
+			<td><input type="text" name="amount"></td>
+		</tr>
+	</table>
+	<br>
+	<button type="submit" onclick="alert('계산 완료')">계산</button>
+	<button type="submit" onclick="alert('구매 완료')">구매</button>
+	<button type="reset" onclick="alert('초기화 완료')">초기화</button>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body, h1, h2, h3, h4, h5, h6, p {
+			margin: 0px;
+		}
+		
+		header {
+			background-color: lightpink;
+			line-height: 80px;
+			text-align: center;
+			border-radius: 15px;
+			margin-bottom: 5px;
+		}
+		
+		nav {
+			background-color: rgb(255, 255, 77);
+			float: left;
+			width: calc(30% - 15px);
+			height: 600px;
+			padding-left: 10px;
+			border-radius: 20px;
+			margin-right: 5px;
+		}
+		
+		section {
+			background-color: rgba(255, 255, 128, .5);
+			float: right;
+			width: 70%;
+			height: 600px;
+			border-radius: 20px;
+			margin-bottom: 5px;
+		}
+		
+		nav, section {
+			height: calc(100vh - 120px);
+		}
+		
+		footer {
+			background-color: brown;
+			color: white;
+			clear: both;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 15px;
+		}
+		
+		article {
+			padding: 20px;
+		}
+		
+		img {
+			padding-top: 100px;
+			height: 200px;
+			width: 190px;
+		}
+		
+		.mid {
+			min-width: 1000px;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My Blog Page</h1>
+	</header>
+	<div class="mid">
+	<nav>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="https://www.w3.org/" target="_blank">W3C</a></li>
+			<li><a href="https://www.mozilla.org/ko/" target="_blank">MOZILLA</a></li>
+			<li><a href="https://www.htmldog.com/">HTML Dogs</a></li>
+		</ul>
+		<img src="../../images/spongebob11.jpg" alt="스펀지밥">
+		<p>스펀지밥</p>
+	</nav>
+	<section>
+		<article>
+			<h3>Semantic Tags</h3>
+			<p>시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.</p>
+		</article>
+		<article>
+			<h3>div와 span</h3>
+			<p>div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span 요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.</p>
+		</article>
+	</section>
+	</div>
+	<footer>
+		<p>Copyright(c) 2013 JUNG</p>
+	</footer>
+</body>
+</html>

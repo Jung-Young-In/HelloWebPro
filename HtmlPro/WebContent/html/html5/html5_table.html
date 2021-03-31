@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		table, th, td {		/* tr에는 border가 먹히지 않음 */
+			border: 1px solid black;
+		}
+		table {
+			border-collapse: collapse;
+			width: 300px;
+			height: 100px;
+			/* text-align: center; */
+		}
+		caption {
+			caption-side: bottom;
+		}
+		td {
+			/* text-align: center; */
+			background-color: yellow;
+		}
+		th {
+			background-color: navy;
+			color: white;
+		}
+		td.green {
+			text-align: center;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>테이블 스타일 연습</h1>
+	<table>
+		<caption>VIP 고객 리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>이메일</th>
+		</tr>
+		<tr>
+			<td style="text-align: center;">홍길동</td>
+			<td>hong@gmail.com</td>
+		</tr>
+		<tr class="green">
+			<td style="text-align: center;">아이유</td>
+			<td>iu@naver.com</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">이지은</td>
+			<td>lee@naver.com</td>
+		</tr>
+		<tr class="green">
+			<td style="text-align: center;">정영인</td>
+			<td>jung@naver.com</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">전재수</td>
+			<td>jeon@naver.com</td>
+		</tr>
+		<tr class="">
+			<td style="text-align: center;">최영준</td>
+			<td>choi@naver.com</td>
+		</tr>
+	</table>
+</body>
+</html>

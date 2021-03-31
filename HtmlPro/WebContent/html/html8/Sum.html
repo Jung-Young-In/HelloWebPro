@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sum</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var sum = 0;
+		do {
+			var input = prompt("합을 구할 숫자를 입력하세요. 0 입력시 출력");
+			sum += parseInt(input);
+		}while(!(input == 0));
+		document.write("누적된 합계 : " + sum);
+	</script>
+</body>
+</html>

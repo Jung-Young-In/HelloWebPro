@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SIGN UP</title>
+	<link rel="stylesheet" href="../css/mystyle.css">
+	<style type="text/css">
+		body {
+			background-color: #f5f5dc;
+		}
+		.input {
+			width: 200px;
+		}
+		form {
+			margin: 50px;
+			background-color: white;
+			padding: 50px;
+		}
+		.button {
+			background-color: green;
+			color: white;
+			font-size: 15px;
+			border: 0px;
+			border-radius: 10px;
+			width: 90px;
+			height: 27px;
+			line-height: 25px;
+		}
+	</style>
+</head>
+<body>
+	<h2><b>회원가입</b></h2>
+	<br>
+	<hr>
+	<br>
+	<table style="width: 500px; height: 350px;">
+		<tr> 
+			<td>아이디</td>
+			<td> 
+			<input type="text" class="input" name="id" placeholder="아이디 입력">
+			<button type="button" class="button">중복확인</button>
+			</td>
+		</tr>
+		<tr> 
+			<td>비밀번호</td>
+			<td> 
+			<input type="password" class="input" name="password" placeholder="비밀번호 입력">
+			</td>
+		</tr>
+		<tr> 
+			<td>비밀번호 확인</td>
+			<td> 
+			<input type="password" class="input" name="passwordagain" placeholder="비밀번호 재입력">
+			</td>
+		</tr>
+		<tr> 
+			<td>성명</td>
+			<td> 
+			<input type="text" class="input" name="name" placeholder="이름 입력">
+			</td>
+		</tr>
+		<tr> 
+			<td>전화번호</td>
+			<td> 
+			<input type="tel" class="input" name="tel" placeholder="전화번호 입력">
+			</td>
+		</tr>
+		<tr> 
+			<td>E-MAIL</td>
+			<td> 
+			<input type="email" class="input" name="email" placeholder="이메일 입력">
+			</td>
+		</tr>
+		<tr> 
+			<td>생년월일</td>
+			<td> 
+			<input type="date" class="input" name="birth">
+			</td>
+		</tr>
+		<tr> 
+			<td> 
+				<br>
+				<input type="radio" name="gender" id="male" value="male">
+				<label for="male">남성</label>
+				<input type="radio" name="gender" id="female" value="female">
+				<label for="female">여성</label>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+	<br>
+	<button type="submit" class="button">제출</button>
+	<input type="reset" class="button" name="reset" value="초기화">
+</body>
+</html>

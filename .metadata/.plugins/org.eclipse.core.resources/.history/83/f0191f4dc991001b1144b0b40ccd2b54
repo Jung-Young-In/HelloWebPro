@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		img {
+			height: 100px;
+			width: 150px;
+		}
+	</style>
+</head>
+<body>
+	<img alt="메롱" src="../../images/simson1.jpg">
+	<img alt="줘" src="../../images/simson2.png">
+	<img alt="뾰로롱" src="../../images/spongebob.jpg">
+	<img alt="싱나" src="../../images/spongebob11.jpg">
+	<img alt="마드리드" src="../../images/madrid.jpg">
+	<br>
+	<button type="button">눌러보세요</button>
+</body>
+</html>

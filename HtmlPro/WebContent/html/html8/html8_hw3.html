@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sumInput() {
+			
+			var sum = 0;
+			var count = 0;
+			
+			while (true) {
+				
+				var num = Number(prompt("합을 구할 숫자를 입력해주세요(0 입력시 종료)"));
+				if(n == 0){
+					break;
+				}
+				
+				sum += num;
+				count++;
+				
+				console.log(count, num, sum);
+			}
+			
+			document.write("입력한 " + count + "수의 합은 " + sum + "입니다");
+		}
+		alert(sumInput());
+	</script>
+
+</body>
+</html>

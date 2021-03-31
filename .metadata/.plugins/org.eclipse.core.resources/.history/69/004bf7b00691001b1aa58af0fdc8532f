@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>trigger 사용법</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("input", "#ex1").focus(function() {
+				$("<span>포커스받았슈</span>")appendTo("#ex1").fadeOut(1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="ex1">
+		<h3>trigger와 triggerHandler 비교</h3>
+		<button type="button">trigger</button>	
+		<button type="button">triggerHandler</button>
+		<br><br>
+		<input type="text" value="">	
+	</div>
+</body>
+</html>

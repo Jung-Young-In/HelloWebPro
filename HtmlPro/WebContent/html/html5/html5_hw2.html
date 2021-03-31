@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		table, tr{		
+			border: 2px solid red;
+			border-collapse: collapse;
+		}
+		td {
+			border: 2px solid red;
+			width: 500px;
+			height: 80px; 
+		}
+		th {
+			background-color: navy;
+			color: white;
+		}
+		tr.yellow {
+			text-align: center;
+			background-color: yellow;
+		}
+		tr.green { 
+			text-align: center;
+			background-color: green;
+		}
+		tr.none {
+			text-align: center;
+		}
+		/* 가상클래스 이용
+		table tr:first-child {
+			background-color: yellow;
+			} 
+		table tr:nth-child(2n-1) 홀수표기{
+			background-color: lime;
+			}
+		*/
+		/*  
+		tr:nth-child(2) {~} => 2번째
+		tr:nth-child(2n) {~} => 짝수
+		tr:nth-child(2n+1) {~} => 홀수
+		tr:nth-child(even) {~} => 짝수
+		tr:nth-child(odd) {~} => 홀수
+		*/
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">연습2</h1>
+	<ul>
+		<li><h2>가상 클래스 이용하기</h2></li>
+	</ul>
+	<table>
+		<tr class="yellow">
+			<td>알라딘</td>
+			<td>임꺽정</td>
+			<td>개나리</td>
+			<td>홍길동</td>
+		</tr>
+		<tr class="green">
+			<td>패밀리</td>
+			<td>스타일</td>
+			<td>텍스트</td>
+			<td>볼드체</td>
+		</tr>
+		<tr class="none">
+			<td>선택자</td>
+			<td>인라인</td>
+			<td>패밀리</td>
+			<td>요소들</td>
+		</tr>
+		<tr class="green">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

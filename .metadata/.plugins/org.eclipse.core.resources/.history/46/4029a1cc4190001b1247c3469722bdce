@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("img").css("width", "200px").css("height", "200px").css("margin-right", "20px");
+		$("button").css("width", "50px").css("height", "30px");
+		var orgSrc;
+		
+		$("img").on({
+			mouseover: function(e) {
+				orgSrc = e.target.src
+				e.target.src = "../../images/simson1.jpg"
+			}
+			, mouseout: function(e) {
+				e.target.src = orgSrc;
+			}
+		});
+		
+		var cnt = 0;
+	
+		$("img").on({
+			dblclick: function(e) {
+				$(this).css("display", "none");
+				$("button").hide("slow");
+				cnt++;
+		
+				if($("img").length == cnt){
+					$("button").show("slow");
+					cnt=0;
+				}
+			}
+		});
+	});
+	function show() {
+		$("img").css("display", "inline");
+		$("button").hide("slow");
+	}
+	</script>
+</head>
+<body>
+	<div>
+		<img alt="madrid" src="../../images/madrid.jpg">
+		<img alt="simson" src="../../images/simson2.png">
+		<img alt="lion" src="../../images/lion.jpg">
+	</div>
+	<div>
+		<button type="button" style="display: none" onclick="show()">버튼</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//화면 초기 세팅
+		$("p").click(function() {
+			alert("클릭합니다.");
+		});
+// 		$("p").mouseover();
+// 		$("p").mouseout();
+		$("p").on({
+			mouseover: function() {
+				//마우스 오버했을 때 배경색 바꾸기
+				$(this).css("background-color", "yellow");
+			}
+			, mouseout: function(e) {
+				//마우스 아웃했을 때 원래대로 바꾸기
+				$(this).css("background-color", "white");
+				console.log(e);
+				console.log(e.type);
+				console.log(e.target);
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1 onclick="alert(1);">JQUERY 이벤트</h1>
+	<p>이벤트를 넣는다</p>
+	<p>싫음</p>
+	<p>배고픔</p>
+	<p>진짜 배고픔</p>
+</body>
+</html>

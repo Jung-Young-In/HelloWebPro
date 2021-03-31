@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function addImages(i) {
+			var arr = document.getElementsByTagName("li");
+			
+			//이미지 소스를 가지고 있는 배열
+			var arrImgSrc = ["spongebob.jpg"
+							,"spongebob11.jpg"
+							,"tiger11.jpg"
+							,"lion.jpg"
+							,"lion11.jpg"];
+			
+			for (var i = 0; i < arr.length; i++) {
+				//이미지 요소 생성
+				var imgObj = document.createElement('img');
+				
+				imgObj.alt = "이미지";
+				imgObj.src = "../../images/" + arrImgSrc[i];
+				imgObj.height = "30";
+				
+				arr[i].appendChild(imgObj);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="addImages();">실행</button>
+	<ul>
+		<li>컴퓨터1</li>
+		<li>식품2</li>
+		<li>호랑이</li>
+		<li>cloud03</li>
+		<li>coffee1</li>
+	</ul>
+	
+	<hr>
+	
+	<div id="target">
+		<p id="p1">첫번째 단락</p>
+		<p id="p2">두번째 단락</p>
+	</div>
+	<button type="button" onclick="removeEle()">삭제</button>
+	<script type="text/javascript">
+		function removeEle() {
+			var parentEle = document.getElementById("target");	//<div>
+			var childEle = document.getElementById("p1");	//<p>
+			parentEle.removeChild(childEle);
+		}
+	</script>
+</body>
+</html>

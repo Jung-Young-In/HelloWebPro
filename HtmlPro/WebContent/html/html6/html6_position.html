@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		p, div {
+			width: 200px;
+			height: 100px;
+		}
+		
+		#ex1 {
+			background-color: aqua;
+		}
+		#ex2 {
+			background-color: yellow;
+			position: absolute;
+			left: 50px;
+			top: 30px;
+		}
+		#ex3 {
+			background-color: lightgreen;
+		}
+		#container {
+			background-color: yellow;
+		}
+		img {
+			width: 300px;
+			height: 300px;
+			top: 500px;
+			position: absolute;
+			z-index: -1;
+		}
+		img+p {
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>position 연습</h1>
+	<p id="ex1">블럭1</p>
+	<div id="container">
+		<div id="ex2">블럭2 (position)</div>
+	</div>
+	<p id="ex3">블럭3</p>
+	
+	<h1>z-index 연습</h1>
+	<img src="../../images/spongebob2.png" alt="스펀지밥">
+	<p>네모바지 스펀지밥</p>
+</body>
+</html>

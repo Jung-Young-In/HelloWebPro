@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		이름<input type="text"><br>
+		성별
+		<input type="radio" id="genderMale">
+		<label for="genderMale">남자</label>
+		<input type="radio" id="genderFemale">
+		<label for="genderFemale">여자</label>
+		
+	</form>
+</body>
+</html>

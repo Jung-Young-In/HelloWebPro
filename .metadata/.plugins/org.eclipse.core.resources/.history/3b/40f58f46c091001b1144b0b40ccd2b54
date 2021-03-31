@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		이름<input type="text">
+		<br><br>
+		성별
+		<input type="radio" id="genderMale">
+		<label for="genderMale">남자</label>
+		<input type="radio" id="genderFemale">
+		<label for="genderFemale">여자</label>
+		<br>
+		<textarea rows="" cols=""></textarea>
+		<br>
+		직업
+		<select name="job">
+		<option value=""></option>
+		<option value="개발자">개발자</option>
+		<option value="사랑꾼">사랑꾼</option>
+		<option value="사기꾼">사기꾼</option>
+		</select>
+		<br><br>
+		<button type="button">조사하기</button>
+		<button type="button">이름변경</button>
+	</form>
+</body>
+</html>

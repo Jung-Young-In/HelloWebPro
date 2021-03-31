@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	
+	</script>
+</head>
+<body>
+	<form>
+		체크박스 : 
+		<input type="checkbox" checked="checked">
+		<br><br>
+		라디오 : 
+		<input type="radio" id="genderM" name="gender" value="M" checked="checked">
+		<label for="M">남자</label>
+		<input type="radio" id="genderF" name="gender" value="F">
+		<label for="F">여자</label>
+		<br><br>
+		리스트박스 : 
+		<select>
+			<option value="A00" selected="selected">--선택--</option>
+			<option value="A01" selected="selected">하나</option>
+			<option value="A02" selected="selected">둘</option>
+			<option value="A03" selected="selected">셋</option>
+		</select>
+		<br><br>
+		(readonly) : 
+		<input type="text" readonly="readonly">
+		<br><br>
+		(disabled) : 
+		<button type="button" disabled="disabled" id="btnRun">실행</button>
+		<button type="button" disabled="disabled" id="btnAttr">attr확인</button>
+		<button type="button" disabled="disabled" id="btnProp">prop확인</button>
+		<br><br>
+		체크박스(전체선택/해제) :
+		<input type="checkbox" id="all">
+		<label for="all">전체선택</label>
+		<input type="checkbox" id="1">
+		<label for="1">1</label>
+		<input type="checkbox" id="2">
+		<label for="2">2</label>
+		<input type="checkbox" id="3">
+		<label for="3">3</label>
+		<input type="checkbox" id="4">
+		<label for="4">4</label>
+		<input type="checkbox" id="5">
+		<label for="5">5</label>
+	</form>
+</body>
+</html>

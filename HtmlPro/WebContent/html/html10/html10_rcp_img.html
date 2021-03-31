@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function rcp() {
+		var arrRcp = ["가위", "바위", "보"];	//인덱스 0,1,2를 가지고 있음
+		var comIdx = Math.floor(Math.random()*3);	//컴퓨터의 인덱스
+// 		parseInt(Math.random()*3);
+		var comRcp = arrRcp[comIdx];
+		
+		var userRcp = document.getElementById("rcp").value;	//가위, 바위, 보
+		
+		var userIdx = arrRcp.indexOf(userRcp);
+		
+		//가위, 바위, 보 비교
+		if(comIdx == userIdx) { 
+			alert("비김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+		} else if (comIdx < userIdx){	//사용자가 이긴 경우
+			//(컴퓨터가 낸 인덱스, 사용자가 낸 인덱스)로 표현 : (0,1), (1,2), (2,0)
+			if(comIdx == 0 && userIdx == 2) {	//컴퓨터가 이김
+				alert("짐\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			} else {	//사용자가 이긴 경우
+				alert("이김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			}
+		} else if (comIdx > userIdx) {	//(2,1), (2,0), (1,0)
+			if(comIdx == 2 && userIdx == 0) {	//사용자가 이김
+				alert("이김\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			} else {	//컴퓨터가 이긴 경우
+				alert("짐\n컴퓨터 : " + comRcp + "\n사용자 : " + userRcp);
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<button type="button">대결 시작</button>
+	<p style="text-align: center; width: 400px; height: 30px; background-color: red; line-height: 30px; float: left; color: white;">사람</p>
+	<p style="text-align: center; width: 400px; height: 30px; background-color: blue; line-height: 30px; float: right; color: white;">컴퓨터</p>
+</body>
+</html>

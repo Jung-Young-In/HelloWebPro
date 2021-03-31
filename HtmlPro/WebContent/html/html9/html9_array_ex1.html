@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>문제1</title>
+	<script type="text/javascript">
+	
+	function proc1() {
+		
+	var arr = [];
+	var idx = 0;
+	
+	while(true) {
+		var name = prompt("이름을 입력하세요. \n빈값이나 취소버튼 클릭시 종료");
+		
+		if(name == "" || name == null) {
+			break;
+		}
+		
+// 		arr[idx] = name;
+// 		idx++;
+		
+ 		arr.push(name);
+	}
+// 	document.write(arr);
+	document.getElementById("divResult").innerHTML = arr;
+	}
+	
+	//서로 중복되지 않은 정수 5개를 입력 받아 출력(문제2)
+	function proc2() {
+		var arr = [];
+		var idx = 0;
+		
+		while(arr.length < 5) {
+			var value = prompt("정수를 입력하세요.");
+			//value가 arr에 존재하는지 확인하고, 존재하지 않으면 arr에 value를 추가
+			var idx = arr.indexOf(value);
+			if(idx == -1) {
+				arr.push(value);
+			if(arr.length == 5)
+				break;
+			}else {
+				continue;
+			}
+			//-추가하고 arr이 5개면 종료
+			//존재하면 다시 prompt 받음
+		}
+	}
+	document.getElementById("divResult").innerHTML = arr;
+	</script>
+</head>
+<body>
+	<button type="button" onclick="proc1()">문제1</button>
+	<button type="button" onclick="proc2()">문제2</button>
+	<hr>
+	<h3>문제 결과</h3>
+	<div id="divResult" style="border: 1px dotted orange; width: 100%; height: 100px;">
+	
+	</div>
+</body>
+</html>

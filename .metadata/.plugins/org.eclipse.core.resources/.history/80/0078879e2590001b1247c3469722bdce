@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>FORM 선택자</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(":input").css("border", "2px solid lime").css("background-color", "pink");
+		$(":input[type='button']").css("background-color", "lightblue").css("width", "80px").css("height", "30px");
+		$(":input[type='button']").css("background-color", "black").css("color", "white");
+		$(":button").css("background-color", "lightblue");
+		$(":submit").css("background-color", "green");
+		$(":reset").css("background-color", "yellow")
+		$(":text, :password").css("border", "2px solid blue");
+		$(":file, :image").css("border", "2px solid red");
+		$(":text").css("width", "208px");
+		$(":input[type='submit']").css("width", "80px").css("height", "30px");
+		$(":input[type='reset']").css("width", "80px").css("height", "30px");
+		
+	});
+	
+	var beforeChecked = -1;
+	
+	$(function () {
+		$(document).on("click", "input[type=radio]", function(e) {
+			var index = $(this).parent().index("label");
+			if(beforeChecked == index){
+				beforeChecked = -1;
+				$(this).prop("checked", false);
+			}else{
+				beforeChecked = index;
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+	<form>
+		<b>Text</b> : <input type="text">
+		<br>
+		<b>Password</b> : <input type="password">
+		<br><br>
+		<b>Radio</b> : 
+		<label><input type="radio" name="A" value="A">A</label>
+		<label><input type="radio" name="B" value="B">B</label>
+		<br><br>
+		<b>Checkbox</b> : 
+		<label><input type="checkbox" value="1">1</label>
+		<label><input type="checkbox" value="2">2</label>
+		<br><br>
+		<b>Textarea</b> : 
+		<br>
+		<textarea rows="20" cols="60"></textarea>
+		<br><br>
+		<b>Image</b> : <img alt="simson" src="../../images/simson2.png">
+		<br><br>
+		<b>File</b> : <input type="file">
+		<br><br>
+		<b>button</b> : 
+		<button type="button" title="일반버튼">Normal</button>
+		<button type="submit" title="제출버튼">Submit</button>
+		<button type="reset" title="초기화버튼">Reset</button>
+		<br><br>
+		<input type="button" value="일반버튼">
+		<input type="submit" value="전송버튼">
+		<input type="reset" value="초기화버튼">
+		<br><br>
+	</form>
+</body>
+</html>

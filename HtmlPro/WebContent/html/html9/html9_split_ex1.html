@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str="One,Two,Three,Four,Five";
+		document.write(str + "<br>");
+		
+		var arr = str.split(',');
+		document.write("split 결과 : " + arr + "<br>");
+		document.write("split 결과의 arr 길이 : " + arr.length + "<br>");
+		//split을 사용하면 일반적인 string 값을 배열로 반환(리턴)
+		//arr은 ["one", "two", "three", "four", "five"]와 같이 리턴
+		
+		//one number와 같이 string 뒤에 구분해줄 문자를 넣어주고 싶을때
+		for (var i = 0; i < arr.length; i++) {
+			document.write((i+1) + " - " + arr[i] + " number" + "<br>");
+		}
+	</script>
+</body>
+</html>

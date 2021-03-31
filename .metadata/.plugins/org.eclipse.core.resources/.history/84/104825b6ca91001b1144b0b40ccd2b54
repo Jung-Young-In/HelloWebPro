@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		img {
+			height: 100px;
+			width: 150px;
+		}
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#btnSet").click(function() {
+// 				var str = $("#img1").attr("src");
+// 				//"../../images/simson1.jpg"
+// 				var arr = str.split("/"); 
+// 				// ["..", "..", "images", "flowers.jpg"]
+// 				var fileName = arr[arr.length-1];
+// 				// "simson1.jpg"
+				
+// 				$("#img1").attr("title", fileName);
+				
+// 				//case1) for문 사용
+// 				var objs = $("img");
+// 				for() { 
+					
+// 				}
+
+				//case2) each() 사용
+				$("img").each(function() {
+// 					console.log(this);
+					var src = this.attr("src");
+					var arr = src.split("/");
+					var fileName = arr[arr.length-1];
+					$(this).attr("title", fileName);
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<img id="img1" alt="메롱" src="../../images/simson1.jpg">
+	<img alt="줘" src="../../images/simson2.png">
+	<img alt="뾰로롱" src="../../images/spongebob.jpg">
+	<img alt="싱나" src="../../images/spongebob11.jpg">
+	<img alt="마드리드" src="../../images/madrid.jpg">
+	<br>
+	<button type="button" id="btnSet">눌러보세요</button>
+</body>
+</html>
