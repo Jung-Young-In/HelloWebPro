@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		img {
+			height: 150px;
+			width: 150px;
+			margin: 10px;
+		}
+		div {
+			border: 1px solid red;
+		}
+		p {
+			color: green;
+			font-size: 20px;
+		}
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		var imgRootPath = "../../images/";
+		$(document).ready(function() {
+			
+			$("p").click(function () {
+			
+			var addObj = $("<img>");
+			
+			$(this).append(addObj.attr("src", imgRootPath + $(this).attr("title")));
+				
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	<div>
+		<p title="tul.jpg">튤립</p>
+		<p title="sudal.jfif">수달</p>
+		<p title="koa.jfif">코알라</p>
+		<p title="lav.jfif">라벤더</p>
+	</div>
+</body>
+</html>
