@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			width: 500px;
+			height: 30px;
+			border: 1px solid green;
+			
+		}
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("span:contains(JQuery)").css("border", "2px solid blue");
+			$("span:not(:contains(JQuery))").css("border", "2px solid red");
+			$("div:has(span)").css("border", "2px solid green");
+			$("div:empty").css("border", "2px solid orange");
+			$("div:parent").css("font-size", "1.5em");
+		});
+	</script>
+</head>
+<body>
+	<div></div><br>
+	<div>
+		헬로우!
+		<span>오늘도 즐겁게 열심히!</span>
+	</div><br>
+	<p>
+		Hello JQuery!
+		<span>Thanks, JQuery!</span>
+	</p><br>
+	<div>JQuery!</div><br>
+	<span>쉬운 JQuery</span><br>
+	<div></div><br>
+	<hr color="blue"><br>
+</body>
+</html>

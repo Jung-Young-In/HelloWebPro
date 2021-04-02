@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+		$("#btn1").click(function() {
+			$(":hidden").each(function() {
+			var str = "태그명 : " + $(this).prop("tagName")
+						+ "\n" + "유형 : " + this.type
+						+ "\n" + "값 : " + this.value;
+			alert(str);
+			});
+		});
+		});
+	</script>
+</head>
+<body>
+	ID : 
+	<input type="text" name="userId" value="hong">
+	<span style="display: none;">ID가 중복됩니다.</span>
+	<br>
+	이름 : 
+	<input type="text" name="userName" value="홍길동">
+	<span style="display: none">이름을 입력하세요</span>
+	<br>
+	성별 : 
+	<input type="radio" name="gender" value="남" id="genderMail">
+	<label for="genderMail">남자</label>
+	<input type="radio" name="gender" value="여" id="genderFemail">
+	<label for="genderFemail">여자</label>
+	<br>
+	<input type="button" value="hidden요소" id="btn1">
+	<input type="button" value="visible요소" id="btn2">
+</body>
+</html>

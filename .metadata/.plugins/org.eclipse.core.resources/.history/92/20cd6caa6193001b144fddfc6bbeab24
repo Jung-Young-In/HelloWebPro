@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#result").click(function() {
+			
+			var check = [];
+			
+			$('input[type="checkbox"]:checked').each(function(e) {
+				if(e != 0){
+					check += ',';
+				}
+				check += $(this).val();
+				
+				alert(check);
+			});
+			});
+		});
+	</script>
+</head>
+<body>
+	<form>
+		취미 : 
+		<input type="checkbox" id="travel">
+		<label for="travel">여행</label>
+		<input type="checkbox" id="jangki">
+		<label for="jangki">장기</label>
+		<input type="checkbox" id="baduk">
+		<label for="baduk">바둑</label>
+		<input type="checkbox" id="reading">
+		<label for="reading">독서</label>
+		<input type="checkbox" id="fishing">
+		<label for="fishing">낚시</label>
+		<br><br>
+		<button type="button" id="result">전송</button>
+		<br><br>
+		선택결과 : <p></p>
+	</form>
+</body>
+</html>
