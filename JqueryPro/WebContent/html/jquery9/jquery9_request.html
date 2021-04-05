@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<style type="text/css">
+		div {
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<h3>XMLHttpRequest 사용하기</h3>
+	<button type="button" id="btnGetA">Get 비동기 호출</button>
+	<button type="button" id="btnGetS">Get 동기 호출</button>
+	<br>
+	<button type="button" id="btnJQ">JQ AJAX 호출</button>
+	<hr>
+	<div id="divResult" style="border: 1px solid; height: 300px;"></div>	
+	<form action="" method="get" id="fm">
+		아이디 : <input type="text" name="userName">
+		비밀번호 : <input type="password" name="userPassword">
+	</form>	
+</body>
+	<script type="text/javascript">
+	$("#btnJQ").click(function() {
+// 		var obj =  {userId : "test01", userPw : "1234567"};
+		var obj = $("#fm").serialize();
+		$.ajax({
+			url : "jquery7_filter.html"	//호출할 주소(url)
+		  , type : "get"		//데이터 전송 방식(method 타입) - "get" 또는 "post"로 작성
+// 		  , data : {userId : "test01", userPw : "1234567"}			//전송할 데이터
+// 		  , data : $("#fm").serialize();
+		  , data : obj	//전송할 데이터
+		  , dataType : "html"	//결과로 받은 데이터의 유형(서버로부터 받은 데이터 유형) - 위 obj의 데이터 타입이 아님을 주의
+		  						//html, json, text, xml 등의 데이터 유형 가능
+		  , success : function(data) {	//성공시 처리할 작업 정의
+			alert("성공");
+		    //data를 가공해서 화면에 세팅 및 처리
+		  }
+		  , error : function(xhr) {	//오류시 처리할 작업 정의
+			alert("실패");
+		  	//xhr에 에러코드와 에러메시지 포함되어 있음
+		  }
+		});
+	});
+	
+	$("#btnGetA").click(function() {
+		//body뒤에 뒀기 때문에 body가 수행된 후라 document.ready 작성 안함(다른 위치일 경우 작성해야함)
+		
+		//jquery1/jquery1_basic.html
+		//1) XMLHttpRequest 객체 생성하기
+		//XMLHttpRequest 객체로 호출하기
+		var xhttp = new XMLHttpRequest();
+		
+		//2)서버(혹은 페이 등) 연결하기 - open(method, url, async);
+		var url = "jquery7_filter.html";
+		xhttp.open("GET", url, true);
+		
+		//3)서버(혹은 페이 등) 전송하기 - send(); 
+		xhttp.send();
+		
+		//4) 결과 처리하기
+		xhttp.onreadystatechange = function() {
+			if(this.readyState == 4	//요청이 처리 완료됨(데이터 받은 상태(4))
+			&& this.status == 200)		//서버에서 요청이 정상 처리된 상태
+			{
+				//정상 처리 되었을 때 화면 처리할 내용
+				console.log(this.responseText);
+				$("#divResult").html(this.responseText);
+			}
+		};
+	});
+	
+	$("#btnGetS").click(function() {
+		//body뒤에 뒀기 때문에 body가 수행된 후라 document.ready 작성 안함(다른 위치일 경우 작성해야함)
+		
+		//jquery1/jquery1_basic.html
+		//1) XMLHttpRequest 객체 생성하기
+		//XMLHttpRequest 객체로 호출하기
+		var xhttp = new XMLHttpRequest();
+		
+		//2)서버(혹은 페이 등) 연결하기 - open(method, url, async);
+		var url = "jquery7_form_filter.html";
+		xhttp.open("GET", url, false);
+		
+// 		//3)서버(혹은 페이 등) 전송하기 - send(); 
+// 		xhttp.send();
+		
+		//3) 결과 처리하기()
+		xhttp.onreadystatechange = function() {
+			if(this.readyState == 4	//요청이 처리 완료됨(데이터 받은 상태(4))
+			&& this.status == 200)		//서버에서 요청이 정상 처리된 상태
+			{
+				//정상 처리 되었을 때 화면 처리할 내용
+				console.log(this.responseText);
+				$("#divResult").html(this.responseText);
+			}
+		};
+		//4)서버(혹은 페이 등) 전송하기 - send(); 
+		xhttp.send();
+	});
+	</script>
+</html>

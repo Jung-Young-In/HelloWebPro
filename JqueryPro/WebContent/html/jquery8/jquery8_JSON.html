@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#json").click(function() {
+		
+		var userInfo = {
+				name : "홍길동"
+			  , birth : "1425-12-14"
+			  , age : 30
+			  , address : {
+				  nation : "조선"
+				, city : "전라도"
+				, hobby : ["무술", "검술", "독서"]
+			  }
+		}
+		
+// 		userInfo.name ==> "홍길동"
+// 		userInfo.age ==> 30
+// 		userInfo.address.nation ==> "조선"
+		
+		//1) 1차변환(obj > str) :
+		var jsonData = JSON.stringify(userInfo);
+		
+		$("#result1").text(jsonData);
+		
+		//2) 2차변환(str > obj) :
+		var stringData = JSON.parse(jsonData);
+		
+		$("#result2").text(stringData);
+		
+		//.html로 출력하게 되면 html태그로 인식하기 때문에 출력되지 않음
+// 		$("#result2").text(stringData);
+		
+		//3) 나머지 표시해주기
+		$("#name").text(userInfo.name);
+		$("#address").text(userInfo.address.nation + " " + userInfo.address.city);
+		
+		$("#hobby").text(userInfo.address.hobby);
+
+		//for문 에러.(수정 필요!!!)
+// 		for(var i = 0; i < userInfo.address.hobby.length; i++){
+// 			strHobby += userInfo.address.hobby[i] + ", ";
+// 		}
+// 		strHobby = strHobby.substr(0, strHobby.length-2);
+// 		$("#hobby").text(strHobby);
+		
+		$("#birth").text(new Date(userInfo.birth));
+		});
+	});
+	</script>
+</head>
+<body>
+	<button type="button" id="json">JSON 변환 테스트</button>
+	<br>
+	1차변환(obj > str) :
+	<span id="result1"></span>
+	<br>
+	2차변환(str > obj) :
+	<span id="result2"></span>
+	<br>
+	이름 :
+	<span id="name"></span>
+	<br>
+	주소 :
+	<span id="address"></span>
+	<br>
+	취미 :
+	<span id="hobby"></span>
+	<br>
+	생년월일 :
+	<span id="birth"></span>
+</body>
+</html>
