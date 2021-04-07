@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<p>안녕안녕?</p><br>
+	<p>나는 <span id="spUserName"></span></p><br>
+	<p><span id="spUserAge"></span> 살이얌</p>
+</body>
+<script type="text/javascript">
+	
+	var userName = "";
+	var userAge = "";
+
+// 	window.location.href;	//window 생략 가능
+	var url = location.href;
+	var params = url.substr(url.indexOf("?") + 1);	//?가 포함돼 있으므로 +1
+	var arr = params.split("&");	//[userName, userAge] 배열로 나옴
+
+// 	arr[0];	//userName
+// 	arr[0].split("=");	//[userName, 아이유]
+//  한글 깨지는 경우 encodeURI(), decodeURI() 사용 하면 됨
+	userName = decodeURI(arr[0].split("=")[1]);	//아이유
+	
+// 	arr[1];	//userAge
+// 	arr[1].split("=");	//[userAge, 25]
+	userAge = arr[1].split("=")[1];	//25
+	
+	
+	document.getElementById("spUserName").innerHTML = userName;
+	document.getElementById("spUserAge").innerHTML = userAge;
+</script>
+</html>

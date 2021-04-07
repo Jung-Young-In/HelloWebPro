@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+	<form id="fm">
+		이름 :
+		<!-- name을 지정해줘야 서버로 전송될 수 있음(URL에 ?뒤로 변경된 것을 확인할 수 있음 -->
+		<input type="text" name="userName">	
+		<br>
+		나이 : 
+		<input type="text" name="userAge">
+		<br><br>
+		<button type="submit">submit버튼</button>
+		<button type="button" onclick="fnGet()">get버튼</button>
+		<button type="button" onclick="fnPost()">post버튼</button>
+		<hr>
+	</form>
+	<div id="divResult"></div>
+</body>
+<script type="text/javascript">
+	//url 가져오는 방식 => window.location.href
+	//			   => window.location.href.indexOf("?")
+	//			   => location.href.substr(window.location.href.indexOf("?") + 1).split("&")
+	//			   => location.href.substr(window.location.href.indexOf("?") + 1).split("&")[1]
+	
+	function fnGet() {
+		var fm = document.getElementById("fm");
+		fm.action = "jquery9_submit_result.html?";
+		fm.method = "get";
+		fm.submit();
+	}
+	
+	//post방식은 ? 뒤로 보이지 않음
+	function fnPost() {
+		var fm = document.getElementById("fm");
+		fm.action = "jquery9_submit_result.html";
+		fm.method = "post";
+		fm.submit();
+	}
+</script>
+</html>
