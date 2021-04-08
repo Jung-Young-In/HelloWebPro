@@ -13,6 +13,18 @@
 		<br>
 		나이 : 
 		<input type="text" name="userAge">
+		<br>
+		ID : 
+		<input type="text" name="userId">
+		<br>
+		비밀번호 : 
+		<input type="text" name="userPassword">
+		<br>
+		주소 : 
+		<input type="text" name="userAddr">
+		<br>
+		전화번호 : 
+		<input type="text" name="userHpno">
 		<br><br>
 		<button type="submit">submit버튼</button>
 		<button type="button" onclick="fnGet()">get버튼</button>
@@ -37,7 +49,7 @@
 	//post방식은 ? 뒤로 보이지 않음
 	function fnPost() {
 		var fm = document.getElementById("fm");
-		fm.action = "jquery9_submit_result.html";
+		fm.action = "jquery9_submit_result.jsp";
 		fm.method = "post";
 		fm.submit();
 	}

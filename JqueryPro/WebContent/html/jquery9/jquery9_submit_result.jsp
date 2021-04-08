@@ -8,7 +8,9 @@
 </head>
 <%
 String str = "홍길동";
-System.out.println("오잉");
+
+//한글 깨짐 현상 => request에 CharacterEncoding을 세팅해준다.
+request.setCharacterEncoding("utf-8");
 
 String userName = request.getParameter("userName");
 String userAge = request.getParameter("userAge");
@@ -17,6 +19,6 @@ String userAge = request.getParameter("userAge");
 	<p>안녕안녕?</p><br>
 	<p>나는 <span id="spUserName"><%=userName %></span></p><br>
 	<p><span id="spUserAge"><%=userAge %></span> 살이얌</p>
-	<%=str %>
+<%-- 	<%=str %> --%>
 </body>
 </html>
