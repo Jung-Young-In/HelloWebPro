@@ -22,27 +22,51 @@
 			background-color: #BEB2A7;
 		}
 		
-		#ipDiv {
+		.search {
 			background-color: #DBD7CC;
 			width: 490px;
 			
 			padding: 20px;
 		}
 	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+         $("#btnSearch").click(function(){
+            $.ajax({
+               url : "/JqueryPro/MemberServlet"
+               ,type : "post"
+               ,data : ""
+               ,dataType : "json"
+               ,success : function(data){
+                  console.log(data);
+                  alert("성공");
+                  //
+               }
+               ,error : function(xhr){
+                  console.log(xhr);
+                  alert("오류발생");
+               }
+            });
+            
+         });
+         
+      });
+    </script>
 </head>
 <body>
 	<h3>회원목록</h3>
 	<!-- 검색 조건 영역 -->
-	<div id="ipDiv">
+	<div class="search">
 		ID : <input type="text">
 		이름 : <input type="text">
-		<button type="button">조회</button>
+		<button type="button" id="btnSearch">조회</button>
 	</div>
 	<br>
 	<!-- 검색 결과 영역 -->
 	<div>
-		<table>
 		<h3>검색결과</h3>
+		<table>
 			<tr>
 				<th>번호</th>
 				<th>ID</th>
@@ -103,7 +127,7 @@
 	</div>
 	<br>
 	<!-- 영역 -->
-	<div>
+	<div class="bottom">
 		<button type="button">신규등록</button>
 	</div>
 </body>
