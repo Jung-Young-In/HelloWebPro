@@ -30,6 +30,49 @@ public class MemberServlet extends HttpServlet {
 //		super.doPost(req, resp); // 지워야함 : extends한 HttpServlet 의 doPost를 호출하는 것이기 때문에 현재 클래스의 doPost를 사용할 수 없음
 		
 		// 브라우저로 부터 받은 값을 사용하기 위해 request에서 parameter를 get.
+		String flag = req.getParameter("flag");
+		
+		if(flag.equals("C")) {// 등록
+			create(req, resp);
+		} else if(flag.equals("R")) {//상세조회
+		} else if(flag.equals("U")) {//수정
+		} else if(flag.equals("D")) {//삭제
+		} else if(flag.equals("CHK")) {//ID체크
+			checkMemberId(req, resp);
+		} else {// 회원목록조회
+			retrieveList(req, resp);
+			
+		}
+		
+		
+	}
+	
+	private void checkMemberId(HttpServletRequest req, HttpServletResponse resp) {
+		try { 
+			String memId = req.getParameter("memId");
+	
+			MemberVO memberVo = new MemberVO();
+			memberVo.setMemId(memId);
+			
+			MemberService service = new MemberService();
+			int count = service.checkMemberId(memberVo);
+			
+			req.setAttribute("count", count);
+			
+			RequestDispatcher  disp = req.getRequestDispatcher("/html/member/countResult.jsp");
+			disp.forward(req, resp);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void create(HttpServletRequest req, HttpServletResponse resp) {
+		
+	}
+	
+	private void retrieveList(HttpServletRequest req, HttpServletResponse resp) {
 		String memId = req.getParameter("memId");
 		String memName = req.getParameter("memName");
 		// form serialize를 사용해서 파라미터를 전달한 경우, request에 요소의 name으로 parameter가 매핑됨.
@@ -50,14 +93,22 @@ public class MemberServlet extends HttpServlet {
 			// 결과를 받을 url 세팅
 //			RequestDispatcher  disp = req.getRequestDispatcher("/MemberPj/html/member/memberListResult.jsp"); // <== contextroot 포함하면 안됨!
 			RequestDispatcher  disp = req.getRequestDispatcher("/html/member/memberListResult.jsp");
-			disp.forward(req, resp);
+			try {
+				disp.forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
 	}
+	
 	
 }

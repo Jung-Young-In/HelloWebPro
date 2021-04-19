@@ -33,4 +33,10 @@
          </isNotEmpty>
 	</select>
 	
+	<select id="checkMemberId" parameterClass="kr.or.ddit.member.vo.MemberVO" resultClass="integer">
+		SELECT COUNT(*)
+		FROM TB_MEMBER
+		WHERE MEM_ID = #memId#
+	</select>
+	
 </sqlMap>

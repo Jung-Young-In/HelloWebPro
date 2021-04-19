@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<style type="text/css">
-		table {
-			border-collapse: collapse;
-			width: 530px;
-			height: 100%;
-		}
-		
-		th, td {
-			border: 1px solid gray;
-		}
-		
-		tr, td {
-			height: 24px;
-		}
-		
-		th {
-			background-color: #BEB2A7;
-		}
-		
-		.search {
-			background-color: #DBD7CC;
-			width: 490px;
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 530px;
+	height: 100%;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+
+tr, td {
+	height: 24px;
+}
+
+th {
+	background-color: #BEB2A7;
+}
+
+.search {
+	background-color: #DBD7CC;
+	width: 490px;
+	padding: 20px;
+}
+</style>
+<script src="../../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btnSearch").click(function() {
+			var param = {
+					"memId" : $("#memId").val()
+					,"memName" : $("#memName").val()
+					,"flag" : "LIST"
+			};
+// 			var param = {memId : "test01", memName : "홍길동"};
 			
-			padding: 20px;
-		}
-	</style>
-	<script src="../../js/jquery-3.6.0.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-         $("#btnSearch").click(function(){
-            $.ajax({
-               url : "/JqueryPro/MemberServlet"
-               ,type : "post"
-               ,data : ""
-               ,dataType : "json"
-               ,success : function(data){
-                  console.log(data);
-                  alert("성공");
-                  //
-               }
-               ,error : function(xhr){
-                  console.log(xhr);
-                  alert("오류발생");
-               }
-            });
-            
-         });
-         
-      });
-    </script>
+			$.ajax({
+				url : "/JqueryPro/MemberServlet",
+				type : "post",
+// 				data : {memId : "test01", memName : "홍길동"},
+				data : param,
+				dataType : "json",
+				success : function(data) {
+					console.log(data);
+					alert("성공");
+					//결과(data)로 테이블 만들기
+					makeTable();
+				},
+				error : function(xhr) {
+					console.log(xhr);
+					alert("오류발생");
+				}
+			});
+
+		});
+
+	});
+
+	function makeTable() {
+		//..
+	}
+</script>
 </head>
 <body>
 	<h3>회원목록</h3>
 	<!-- 검색 조건 영역 -->
 	<div class="search">
-		ID : <input type="text">
-		이름 : <input type="text">
+		ID : <input type="text" id="memId">
+		이름 : <input type="text" id="memName">
 		<button type="button" id="btnSearch">조회</button>
 	</div>
 	<br>

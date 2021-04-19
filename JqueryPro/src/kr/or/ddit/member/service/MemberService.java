@@ -20,4 +20,8 @@ public class MemberService {
 		return list;
 	}
 	
+	public Integer checkMemberId(MemberVO memberVo) throws SQLException {
+		return dao.checkMemberId(memberVo);
+	}
+	
 }

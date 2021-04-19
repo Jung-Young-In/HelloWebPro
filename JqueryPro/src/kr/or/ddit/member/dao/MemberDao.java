@@ -18,5 +18,8 @@ public class MemberDao extends BaseDao {
 	public List<MemberVO> retrieveMemberList(MemberVO memberVo) throws SQLException {
 		return smc.queryForList("member.retrieveMemberList", memberVo);
 	}
+	public Integer checkMemberId(MemberVO memberVo) throws SQLException {
+		return (Integer) smc.queryForObject("member.checkMemberId", memberVo);
+	}
 	
 }

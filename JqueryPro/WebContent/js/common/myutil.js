@@ -17,14 +17,14 @@ function getaValue(url, key) {
 function isEmpty(val) {
 	//val이 빈값이거나  null이거나 undefined이거나 일 경우
 	val = val.trim();
-	if(val == " ") {
-		return false;
-	}else if(val == null){
-		return false;
-	}else if(val == undefined){
-		return false;
-	}else {
+	if(val == "") {
 		return true;
+	}else if(val == null){
+		return true;
+	}else if(val == undefined){
+		return true;
+	}else {
+		return false;
 	}
 }
 
@@ -62,13 +62,13 @@ function chkRegExp(val, type) {
 	var phone = /^\d{3}\d{3,4}\d{4}$/; 
 	var email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
 	
-	if("ID".equals(type)){
+	if("ID" == type){
 		if(val.match(id) == null){
 			return false;
 		}else {
 			return true;
 		}
-	}else if(pass.equals(type)){
+	}else if("PASS" == type){
 		
 		if(val.match(pass) == null){
 			return false;
@@ -76,7 +76,7 @@ function chkRegExp(val, type) {
 			return true;
 		}
 		
-	}else if(name.equals(type)){
+	}else if("NAME" == type){
 		
 		if(val.match(name) == null){
 			return false;
@@ -84,7 +84,7 @@ function chkRegExp(val, type) {
 			return true;
 		}
 		
-	}else if(bir.equals(type)){
+	}else if("BIR" == type){
 		
 		if(val.match(bir) == null){
 			return false;
@@ -92,15 +92,7 @@ function chkRegExp(val, type) {
 			return true;
 		}
 		
-	}else if(bir.equals(type)){
-		
-		if(val.match(bir) == null){
-			return false;
-		}else {
-			return true;
-		}
-		
-	}else if(phone.equals(type)){
+	}else if("PHONE" == type){
 		
 		if(val.match(phone) == null){
 			return false;
@@ -108,7 +100,7 @@ function chkRegExp(val, type) {
 			return true;
 		}
 		
-	}else if(email.equals(type)){
+	}else if("EMAIL" == type){
 		
 		if(val.match(email) == null){
 			return false;
@@ -122,6 +114,9 @@ function chkRegExp(val, type) {
 }
 
 
+function openPostPop() {
+	window.open("/JqueryPro/html/common/postCodePopup.html");
+}
 
 
 
