@@ -85,28 +85,42 @@
 		for(var i = 0; i < param.length; i++){
 			var obj = param[i];
 			str += "<tr><td>" + obj.zipcode + "</td>"
-				+ "<td>" + obj.sido + " " + obj.gugun + " " + obj.dong + " " + obj.bunji + "</td></tr>";
+				+ "<td>" + obj.sido + " " + obj.gugun + " " + obj.dong + ((obj.bunji=='null')?"":(" "+obj.bunji)) + "</td></tr>";
 		}
 		$("#tbZipResult tbody").html(str);
-	}
-	
-	// 주소 목록을 더블 클릭 시
-	function sendData(){
-		var dong = document.getElementById("dong").value;
-		console.log(opener); //==> document
-// 		opener.test(dong);
-		opener.document.getElementById("postcode").value = dong;
-
-		$("tbZipResult").on("dbclick", "tbody tr", function() {
+		
+// 		$("#tbZipResult tbody tr").dblclick(function(){});
+//		현재 열려있는 창에서 적용
+		$("#tbZipResult").on("dblclick", "tbody tr", function() {
 			var zipcode = $(this).children("td:eq(0)").text();
 			var addr = $(this).children("td:eq(1)").text();
 			
-			$("#postcode").val(zipcode);
-			$("#address").val(addr);
+// 			$("#postcode").val(zipcode);
+// 			$("#address").val(addr);
+			
+			opener.document.getElementById("postcode").value = zipcode;
+			opener.document.getElementById("address").value = addr;
+			
+			close();
+			
+		});
+	}
+	
+	// 주소 목록을 더블 클릭 시
+// 	function sendData(){
+// 		var dong = document.getElementById("dong").value;
+// 		console.log(opener); //==> document
+// // 		opener.test(dong);
+// 		opener.document.getElementById("postcode").value = dong;
+
+// 		var zipcode = $(this).children("td:eq(0)").text();
+// 		var addr = $(this).children("td:eq(1)").text();
+		
+// 		$("#postcode").val(zipcode);
+// 		$("#address").val(addr);
 			
 		
-		});
-		close();
-	}
+// 		close();
+// 	}
 </script>
 </html>

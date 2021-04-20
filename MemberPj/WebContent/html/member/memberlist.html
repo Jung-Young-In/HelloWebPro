@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 530px;
+	height: 100%;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+
+tr, td {
+	height: 24px;
+}
+
+th {
+	background-color: #BEB2A7;
+}
+
+.search {
+	background-color: #DBD7CC;
+	width: 490px;
+	padding: 20px;
+}
+</style>
+<script src="../../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btnSearch").click(function() {
+			var param = {
+					"memId" : $("#memId").val()
+					,"memName" : $("#memName").val()
+					,"flag" : "LIST"
+			};
+// 			var param = {memId : "test01", memName : "홍길동"};
+			
+			$.ajax({
+				url : "/JqueryPro/MemberServlet",
+				type : "post",
+// 				data : {memId : "test01", memName : "홍길동"},
+				data : param,
+				dataType : "json",
+				success : function(data) {
+					console.log(data);
+					alert("성공");
+					//결과(data)로 테이블 만들기
+					makeTable(data);
+				},
+				error : function(xhr) {
+					console.log(xhr);
+					alert("오류발생");
+				}
+			});
+
+		});
+
+	});
+
+	function makeTable(param) {
+		var str = "";
+		
+		str += "<table><th>번호</th>"
+			+ "<th>ID</th>"
+			+ "<th>이름</th>"
+			+ "<th>전화번호</th>"
+			+ "<th>생년월일</th>"
+			
+		for(var i = 0; i < param.length; i++){
+			var obj = param[i];
+			str += "<tr><td>" + (i + 1) + "</td>"
+				+ "<td>" + obj.memId + "</td>"
+				+ "<td>" + obj.memName + "</td>"
+				+ "<td>" + obj.memHp + "</td>"
+				+ "<td>" + obj.memBir + "</td></tr>"
+		}
+		$("#tbMemberResult tbody").html(str);
+	}
+</script>
+</head>
+<body>
+	<h3>회원목록</h3>
+	<!-- 검색 조건 영역 -->
+	<div class="search">
+		ID : <input type="text" id="memId">
+		이름 : <input type="text" id="memName">
+		<button type="button" id="btnSearch" onclick="btnSearch()">조회</button>
+	</div>
+	<br>
+	<!-- 검색 결과 영역 -->
+	<div>
+		<h3>검색결과</h3>
+		<table id="tbMemberResult">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<!-- 영역 -->
+	<div class="bottom">
+		<button type="button">신규등록</button>
+	</div>
+</body>
+</html>

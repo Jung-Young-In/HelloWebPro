@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		table {
+			border-collapse: collapse;
+			width: 530px;
+			height: 100%;
+		}
+		
+		th, td {
+			border: 1px solid gray;
+		}
+		
+		tr, td {
+			height: 24px;
+		}
+		
+		th {
+			background-color: #BEB2A7;
+		}
+		
+		.search {
+			background-color: #DBD7CC;
+			width: 490px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h3>주소검색</h3>
+	<!-- 검색 조건 영역 -->
+	<div class="search">
+		동 : <input type="text" id="dong">
+		<button type="button" id="btnSearch" onclick="searchList()">주소 검색</button>
+	</div>
+	<hr>
+	<!-- 검색 결과 영역 -->
+	<div>
+		<table id="tbZipResult">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<!-- 하단 버튼 영역 -->
+	<div class="bottom">
+		<button type="button">닫기</button>
+	</div>
+</body>
+
+<script src="../../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	function searchList(){
+		var param = {
+				"dong" : $("#dong").val()
+		};
+		
+		$.ajax({
+			url : "/JqueryPro/ZipServlet",
+			type : "post",
+			data : param,
+			dataType : "json",
+			success : function(data) {
+				console.log(data);
+				makeTable(data);
+			},
+			error : function(xhr) {
+				console.log(xhr);
+				alert("오류발생");
+			}
+		});
+
+	}
+	
+	function makeTable(param) {
+		var str = "";
+		
+		str += "<table><th>우편번호</th>"
+			+ "<th>주소</th>"
+		for(var i = 0; i < param.length; i++){
+			var obj = param[i];
+			str += "<tr><td>" + obj.zipcode + "</td>"
+				+ "<td>" + obj.sido + " " + obj.gugun + " " + obj.dong + ((obj.bunji=='null')?"":(" "+obj.bunji)) + "</td></tr>";
+		}
+		$("#tbZipResult tbody").html(str);
+		
+// 		$("#tbZipResult tbody tr").dblclick(function(){});
+//		현재 열려있는 창에서 적용
+
+		$("#tbZipResult").on("dblclick", "tbody tr", function() {
+			var zipcode = $(this).children("td:eq(0)").text();
+			var addr = $(this).children("td:eq(1)").text();
+			
+// 			$("#postcode").val(zipcode);
+// 			$("#address").val(addr);
+			
+			opener.document.getElementById("postcode").value = zipcode;
+			opener.document.getElementById("address").value = addr;
+			
+			close();
+			
+		});
+	}
+</script>
+</html>

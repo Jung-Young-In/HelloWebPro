@@ -13,22 +13,38 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="addtext" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="dblclick" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="dblclick"/>
+			<item value="sendData"/>
+			<item value="member"/>
+			<item value="Member"/>
+			<item value="ris"/>
+			<item value="ri"/>
+			<item value=".equals(type)"/>
+			<item value="[A-Z]+\.equals\(type\)"/>
+			<item value="/[A-Z]+.equals(type)/"/>
+			<item value="[A-Z]+.equals(type)"/>
+			<item value="EMAIL.equals(type)"/>
 			<item value="addtext"/>
 		</list>
 		<list key="replacehistory">
+			<item value="zip"/>
+			<item value="Zip"/>
+			<item value=" == type"/>
+			<item value="/&quot;[A-Z]+&quot;\ == type/"/>
+			<item value="&quot;[A-Z]+&quot;\ == type"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="648" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="525" key="DIALOG_X_ORIGIN"/>
+		<item value="305" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
